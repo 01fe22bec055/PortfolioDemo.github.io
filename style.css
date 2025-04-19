@@ -20,10 +20,10 @@ body {
   padding: 20px;
 }
 
-/* Hero Section   */
+/* Hero Section */
 .hero {
-  background-color: #0f172a;
-  color: #f0fdf4;
+  background-color: #14532d; /* elegant deep green */
+  color: #ffffff;
   padding: 100px 20px;
   text-align: center;
   display: flex;
@@ -34,24 +34,24 @@ body {
 
 .hero a,
 .hero i {
-  color: #6ee7b7;
+  color: #bbf7d0; /* soft green accent */
   text-decoration: none;
 }
 
 .hero a:hover {
-  color: #34d399;
+  color: #86efac; /* slightly lighter on hover */
 }
 
 .hero-container {
-  background-color: #111827;
+  background-color: #166534; /* a mid-green shade for inner contrast */
   border-radius: 10px;
   padding: 40px;
-  box-shadow: 0 0 20px rgba(0, 255, 128, 0.05);
+  box-shadow: 0 0 20px rgba(22, 101, 52, 0.15); /* subtle green shadow */
 }
 
 .resume-btn {
   display: inline-block;
-  background-color: #10b981;
+  background-color: #22c55e; /* green button */
   color: #fff;
   padding: 10px 20px;
   margin-top: 15px;
@@ -62,7 +62,7 @@ body {
 }
 
 .resume-btn:hover {
-  background-color: #059669;
+  background-color: #16a34a;
 }
 
 
