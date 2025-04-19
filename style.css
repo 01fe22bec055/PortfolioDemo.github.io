@@ -20,7 +20,7 @@ body {
   padding: 20px;
 }
 
-/* Hero Section */
+/* Hero Section - Green Theme */
 .hero {
   background-color: #14532d; /* elegant deep green */
   color: #ffffff;
@@ -32,40 +32,66 @@ body {
   flex-direction: column;
 }
 
-.hero a,
-.hero i {
-  color: #bbf7d0; /* soft green accent */
-  text-decoration: none;
-}
-
-.hero a:hover {
-  color: #86efac; /* slightly lighter on hover */
-}
-
 .hero-container {
-  background-color: #166534; /* a mid-green shade for inner contrast */
-  border-radius: 10px;
-  padding: 40px;
-  box-shadow: 0 0 20px rgba(22, 101, 52, 0.15); /* subtle green shadow */
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero .tagline {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #f0fdf4;
+}
+
+.hero .instructor {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  color: #bbf7d0;
+}
+
+.hero .instructor span {
+  color: #86efac;
+  font-weight: 500;
+}
+
+.social-icons {
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  color: #bbf7d0;
+  font-size: 1.6rem;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #86efac;
 }
 
 .resume-btn {
   display: inline-block;
-  background-color: #22c55e; /* green button */
-  color: #fff;
-  padding: 10px 20px;
+  background-color: #22c55e;
+  color: #ffffff;
+  padding: 12px 24px;
   margin-top: 15px;
-  border-radius: 6px;
+  border-radius: 8px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1rem;
   transition: background-color 0.3s ease;
 }
 
 .resume-btn:hover {
   background-color: #16a34a;
 }
-
-
 
 /* Main Content */
 main {
