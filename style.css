@@ -66,9 +66,13 @@ section ul li {
   margin-bottom: 10px;
 }
 
+/* ---------------------- */
+/* Connect Section Styles */
+/* ---------------------- */
+
 .connect-section {
   background-color: #f0fdf4; /* soft green background */
-  padding: 60px 20px;
+  padding: 50px 20px;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -79,8 +83,8 @@ section ul li {
   max-width: 1100px;
   margin: 0 auto;
   background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 128, 0, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 128, 0, 0.08);
   padding: 40px;
 }
 
@@ -91,18 +95,23 @@ section ul li {
 
 .connect-info h2,
 .connect-details h3 {
-  color: #15803d; /* deep green */
+  color: #15803d; /* deep green for headings */
   margin-bottom: 20px;
+  font-weight: 600;
+  border-bottom: 2px solid #16a34a;
+  display: inline-block;
+  padding-bottom: 6px;
 }
 
 .connect-info p {
-  margin-bottom: 12px;
+  margin-bottom: 15px;
   font-size: 16px;
+  color: #374151;
 }
 
 .connect-info i {
   margin-right: 8px;
-  color: #16a34a; /* green accent */
+  color: #16a34a; /* green icon color */
 }
 
 .connect-info a {
@@ -120,12 +129,12 @@ section ul li {
   grid-template-columns: 150px auto;
   row-gap: 12px;
   column-gap: 10px;
-  margin-top: 10px;
+  font-size: 15px;
 }
 
 .connect-details dt {
   font-weight: 600;
-  color: #065f46; /* darker green */
+  color: #065f46;
 }
 
 .connect-details dd {
@@ -133,19 +142,25 @@ section ul li {
 }
 
 .connect-details blockquote {
-  margin-top: 20px;
+  margin-top: 24px;
   font-style: italic;
   border-left: 4px solid #15803d;
-  padding-left: 12px;
-  color: #374151;
+  padding-left: 16px;
+  color: #475569;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
   .connect-container {
     flex-direction: column;
     padding: 30px 20px;
   }
+
+  .connect-details dl {
+    grid-template-columns: 1fr;
+  }
 }
+
 
 
 
