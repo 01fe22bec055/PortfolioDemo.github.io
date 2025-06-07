@@ -1,112 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tanmay Akalwadi</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanmay Akalwadi | Gen AI Portfolio</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background-color: #0e1117;
+      font-family: 'Segoe UI', sans-serif;
+      color: #d1d5db;
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    header {
+      background-color: #1f2937;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      color: #93c5fd;
+      margin: 0;
+      font-size: 32px;
+      transition: color 0.3s;
+    }
+
+    header h1:hover {
+      color: #60a5fa;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      padding: 8px 14px;
+      text-decoration: none;
+      color: #f3f4f6;
+      font-weight: 600;
+      background-color: #374151;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #2563eb;
+      color: #ffffff;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    h2 {
+      font-size: 32px;
+      color: #facc15;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .block {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 14px;
+      margin-bottom: 30px;
+      transition: all 0.4s ease;
+    }
+
+    .block:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .block h3 {
+      color: #fbbf24;
+      margin-bottom: 10px;
+    }
+
+    .block p, .block ul {
+      font-size: 16px;
+      color: #d1d5db;
+      line-height: 1.6;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 25px;
+      position: relative;
+    }
+
+    .tags span {
+      position: relative;
+      background: #3b82f6;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-size: 15px;
+      cursor: default;
+      transition: transform 0.3s ease;
+    }
+
+    .tags span:hover {
+      transform: scale(1.05);
+    }
+
+    .tags span::after {
+      content: attr(data-description);
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #111827;
+      color: #f1f5f9;
+      padding: 8px 12px;
+      font-size: 13px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 250px;
+      white-space: normal;
+      text-align: center;
+      transition: opacity 0.3s ease;
+      z-index: 999;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .tags span:hover::after {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .interest span {
+      background: #f59e0b;
+    }
+    
+    .welcome-buttons {
+  margin-top: 22px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Primary Blue Button */
+.btn-primary {
+  background-color: #3b82f6;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(59,130,246,0.08);
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(59,130,246,0.15);
+}
+
+/* Secondary Yellow Button */
+.btn-secondary {
+  background-color: #f59e0b;
+  color: #0e1117;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(245,158,11,0.08);
+  transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: #d97706;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(245,158,11,0.15);
+}
+
+  </style>
 </head>
 <body>
-  <section class="hero">
-  <div class="hero-container">
-    <h1>Tanmay Akalwadi</h1>
-    <p class="tagline">Building AI-powered experiences in Gaming & Graphics</p>
-    <p class="instructor">Instructor: <span>Prakash Hegade</span></p>
 
-    <div class="social-icons">
-      <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/in/tanmay-akalwadi-5aa053226" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:tanmayakalwadi@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
+<header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#extra">Business Cases</a>
+    <a href="#projects">Projects</a>
+  </nav>
+</header>
 
-    <a href="resume.pdf" class="resume-btn" target="_blank">
-      <i class="fas fa-file"></i> View Resume
-    </a>
+<section id="intro" style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #0e1117; color: #93c5fd; padding: 60px 20px; box-sizing: border-box;">
+  <div style="max-width: 300px;">
+    <img src="/Tanmay.jpg" alt="Tanmay Akalwadi" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);">
   </div>
-</section>
-
-
-  <main class="container">
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I’m a 3rd-year Electronics & Communication Engineering student with a passion for merging technology and creativity. My primary interests lie in exploring how Artificial Intelligence and Machine Learning can revolutionize game development and computer graphics. I enjoy building immersive, intelligent systems that not only perform well but also create engaging user experiences.
-
-Over the past few years, I’ve worked on projects ranging from road damage detection using YOLO, to real-time 3D lighting and human model deformation using SMPL-X. These experiences have helped me understand how code, models, and design come together to solve real-world problems.
-
-I love experimenting with new tools like Blender, Unity, and PyTorch, and I’m constantly learning to improve my craft. My goal is to build impactful solutions that blend visual storytelling with technical precision.
-
-
-      </p>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li>
-          <strong>Resource Management Web App (Do Creative Labs):</strong> Developed a web application managing human resource data and shoot cost calculations.
-        </li>
-        <li>
-          <strong>Social Media Manager & 3D Content (Intech Developers):</strong> Created and managed online presence with engaging 3D visuals for a property developer.
-        </li>
-        <li>
-          <strong>Fingerprint-based Security System:</strong> Built an automated door closing and theft-alert mechanism using Arduino and fingerprint sensors.
-        </li>
-        <li>
-          <strong>Road Damage Detection Model:</strong> Led a team in developing an ML model using YOLO for detecting road damages.
-        </li>
-        <li>
-          <strong>SMPL-X 3D Human Model:</strong> Developed ML techniques for deformable 3D human models responding dynamically to textual inputs.
-        </li>
-        <li>
-          <strong>Dynamic Illumination System:</strong> Working on movable, interactive lighting solutions for real-time 3D scenes.
-        </li>
-      </ul>
-    </section>
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li><strong>Languages:</strong> C, C++, Java, Python (PyTorch), HTML, CSS, JavaScript, Arduino</li>
-        <li><strong>Tools:</strong> GitHub, Docker, Figma, Blender, Unreal Engine, Unity</li>
-      </ul>
-    </section>
-
-    <section class="connect-section">
-  <div class="connect-container">
-    <div class="connect-info">
-      <h2>Contact Me</h2>
-      <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:tanmayakalwadi@gmail.com">tanmayakalwadi@gmail.com</a></p>
-      <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +91-8296881023</p>
-      <p><i class="fas fa-location-dot"></i> <strong>Location:</strong> Hubli, Karnataka</p>
-      <p><i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tanmay-akalwadi-5aa053226/" target="_blank">Tanmay Akalwadi</a></p>
+  <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 60px; flex-wrap: wrap; max-width: 1000px; width: 100%;">
+    <div style="text-align: left;">
+      <h1 style="font-size: 48px; margin-bottom: 10px;">Hello, I'm</h1>
+    <h1 style="font-size: 64px; font-weight: bold; color: #ffffff;">Tanmay Akalwadi</h1>
+    <h2 style="font-size: 28px; font-weight: 400; color: #cbd5e1; margin-top: 10px;">Aspiring Game Developer</h2>
+    <div style="margin-top: 30px; display: flex; gap: 20px; justify-content: start;">
+      <a href="#about" style="padding: 12px 24px; background-color: #3b82f6; color: white; border-radius: 8px; text-decoration: none; font-weight: 600;">Explore More</a>
+      <a href="#footer" style="padding: 12px 24px; background-color: #f59e0b; color: #0e1117; border-radius: 8px; text-decoration: none; font-weight: 600;">Contact Info</a>
     </div>
-
-    <div class="connect-details">
-      <h3>Portfolio Topic</h3>
-      <dl>
-        <dt>Course Name</dt><dd>Algorithmic Problem Solving</dd>
-        <dt>Course Code</dt><dd>24ECSE309</dd>
-        <dt>Name</dt><dd>Tanmay Akalwadi</dd>
-        <dt>SRN</dt><dd>01FE22BEC055</dd>
-        <dt>Course Instructor</dt><dd>Prakash Hegade</dd>
-        <dt>University</dt><dd>KLE Technological University</dd>
-        <dt>Domain</dt><dd>AI/ML in Game Dev & Graphics</dd>
-      </dl>
-
-      <blockquote>“Those who can imagine anything, can create the impossible.” – Alan Turing</blockquote>
     </div>
   </div>
 </section>
 
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Tanmay Akalwadi</p>
+<section id="home" style="scroll-margin-top: 120px;">
+  <div class="container block" style="text-align:center;">
+    <h2>Welcome to My Portfolio</h2>
+    <p style="font-size:1.15rem; color:#bbf7d0; margin-bottom: 16px;">
+      Step into a world where <span style="color:#facc15; font-weight:600;">creativity</span> meets <span style="color:#22c55e; font-weight:600;">algorithmic power</span>.
+    </p>
+    <p style="font-size:1.08rem; color:#d1d5db;">
+      I’m Tanmay Akalwadi, an engineering student passionate about building immersive digital experiences. Here, you’ll discover how cutting-edge problem-solving, smart data structures, and a love for gaming and AI come together to solve real-world challenges—one project at a time.
+    </p>
+    <div class="welcome-buttons">
+      <a href="#extra" class="btn-primary">See Business Cases</a>
+      <a href="#about" class="btn-secondary">More About Me</a>
     </div>
-  </footer>
-</body>
-</html>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container block">
+    <h2>About Me</h2>
+     <p>
+      I’m Tanmay Akalwadi, a 3rd year Electronics & Communication Engineering student with a passion for AI, game development, and immersive interactive worlds. From a young age, I was fascinated by how games blend storytelling, creativity, and cutting-edge technology—and that passion has guided my journey both inside and outside the classroom.
+    </p>
+    <p>
+      Alongside building intelligent algorithms and applying machine learning to real gaming challenges, I have hands-on experience creating digital assets for games—working with tools like Blender, Unreal Engine and Unity to design models, textures, and environments. I’m driven to understand the entire pipeline: from crafting compelling assets to coding dynamic gameplay systems.
+    </p>
+    <p>
+      My technical toolkit includes Python, C, Java, PyTorch, TensorFlow, Unity, and Unreal Engine. Whether I’m designing smart NPCs, implementing pathfinding, analyzing player data, or developing unique game content, I always aim to combine technical precision with creativity. My ultimate goal is to help build the next generation of games that engage, inspire, and push the boundaries of interactive entertainment.
+    </p>
+    <div class="tags">
+      <span data-description="C programming basics and embedded systems">C</span>
+      <span data-description="Object-oriented programming for system-level development">C++</span>
+      <span data-description="Widely-used general purpose and backend language">Java</span>
+      <span data-description="Flexible language ideal for AI/ML scripting and automation">Python</span>
+      <span data-description="Torch-based deep learning framework">PyTorch</span>
+      <span data-description="Google's machine learning library for scalable models">TensorFlow</span>
+      <span data-description="Game engine for interactive 2D/3D applications">Unity</span>
+      <span data-description="AAA-grade game and real-time rendering engine">Unreal Engine</span>
+      <span data-description="Languages used for building the structure and style of websites">HTML/CSS</span>
+      <span data-description="Tool for containerizing and deploying apps consistently">Docker</span>
+      <span data-description="Collaborative platform for hosting and version-controlling code">GitHub</span>
+      <span data-description="Hardware prototyping board for real-world electronics projects">Arduino</span>
+    </div>
+    <div class="tags interest">
+      <span data-description="Field of AI that creates content like images, audio, and code">Generative AI</span>
+      <span data-description="Techniques for modeling digital objects in 3D space">3D Modelling</span>
+      <span data-description="Algorithms that help systems learn from data">Machine Learning</span>
+      <span data-description="Design and development of engaging and interactive video games">Game Development</span>
+    </div>
+  </div>
+</section>
+
+<section id="extra">
+  <div class="container block">
+    <h2>Business Cases in Gaming</h2>
+    
+    <div class="block">
+      <h3>1. Real-Time NPC Pathfinding in Open-World Games</h3>
+      <ul>
+        <li>Dynamic pathfinding for NPCs using A* and spatial partitioning.</li>
+        <li>Adaptive navigation around obstacles, crowds, and player actions.</li>
+        <li>Graph-based world modeling for scale and realism.</li>
+      </ul>
+      <a href="case1.html" style="display:inline-block; margin-top:10px; color:#22c55e; font-weight:600; text-decoration:none; transition: color 0.3s;">
+  Click for more details →
+</a>
+    </div>
+    
+    <div class="block">
+      <h3>2. Dynamic Difficulty Adjustment (DDA)</h3>
+      <ul>
+        <li>Analyzes player performance and behavior in real-time.</li>
+        <li>Adjusts AI tactics, enemy strength, or resources on the fly.</li>
+        <li>Ensures a personalized and engaging experience for every player.</li>
+      </ul>
+      <a href="case2.html" style="display:inline-block; margin-top:10px; color:#22c55e; font-weight:600; text-decoration:none; transition: color 0.3s;">
+  Click for more details →
+</a>
+    </div>
+    
+    <div class="block">
+      <h3>3. In-Game Economy Balancing & Fraud Detection</h3>
+      <ul>
+        <li>Uses graphs and clustering for market analysis and trade patterns.</li>
+        <li>Detects anomalies or exploitative behaviors in virtual marketplaces.</li>
+        <li>Maintains fair and sustainable game economies.</li>
+      </ul>
+      <a href="case3.html" style="display:inline-block; margin-top:10px; color:#22c55e; font-weight:600; text-decoration:none; transition: color 0.3s;">
+  Click for more details →
+</a>
+    </div>
+    
+    <div class="block">
+      <h3>4. Procedural Content Generation</h3>
+      <ul>
+        <li>Algorithms for auto-generating maps, levels, and quests.</li>
+        <li>Ensures variety and replayability using trees, graphs, and noise functions.</li>
+        <li>Balances randomness with design intent.</li>
+      </ul>
+      <a href="case4.html" style="display:inline-block; margin-top:10px; color:#22c55e; font-weight:600; text-decoration:none; transition: color 0.3s;">
+  Click for more details →
+</a>
+    </div>
+    
+    <div class="block">
+      <h3>5. Multiplayer Matchmaking Optimization</h3>
+      <ul>
+        <li>Uses priority queues and search to match players by skill and ping.</li>
+        <li>Leverages real-time analytics to reduce wait times and balance teams.</li>
+        <li>Improves player retention through fair matchmaking systems.</li>
+      </ul>
+      <a href="case5.html" style="display:inline-block; margin-top:10px; color:#22c55e; font-weight:600; text-decoration:none; transition: color 0.3s;">
+  Click for more details →
+</a>
+    </div>
+    
+    <div class="block">
+      <h3>6. Game Event & Log Analysis for Player Retention</h3>
+      <ul>
+        <li>Processes large-scale event logs using trees, hashmaps, and graphs.</li>
+        <li>Identifies player drop-off points and engagement patterns.</li>
+        <li>Informs content updates and targeted retention strategies.</li>
+      </ul>
+      <a href="case6.html" style="display:inline-block; margin-top:10px; color:#22c55e; font-weight:600; text-decoration:none; transition: color 0.3s;">
+  Click for more details →
+</a>
+    </div>
+    
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="block">
+      <h3>Road Damage Detection using YOLO</h3>
+      <p>Developed a YOLOv5-based system to detect and classify road damage types like potholes, cracks, and rutting using real-world datasets. It can assist in predictive maintenance and smart city infrastructure planning.</p>
+    </div>
+    <div class="block">
+      <h3>3D Avatar Deformation using SMPL-X</h3>
+      <p>Built a simulation pipeline that uses the SMPL-X model to create natural human avatar movements by interpreting body pose and shape. Integrated it with Blender for real-time rendering.</p>
+    </div>
+    <div class="block">
+      <h3>3D Model Relighting using Transformers</h3>
+      <p>Created a transformer-based solution for dynamically relighting 3D models under different virtual environments. Improves realism for games and virtual production.</p>
+    </div>
+  </div>
+</section>
+
+<footer id="footer" style="background-color:#1f2937; color:#d1d5db; text-align:center; padding:40px 20px;">
+  <h2 style="color:#facc15; margin-bottom:20px;">Contact Me</h2>
+  <p>Email: <a href="mailto:tanmayhema@gmail.com" style="color:#93c5fd; text-decoration:none;">tanmayhema@gmail.com</a></p>
+  <p>Phone: <a href="tel:+918296881023" style="color:#93c5fd; text-decoration:none;">+91 8296881023</a></p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/tanmay-akalwadi-5aa053226/" target="_blank" style="color:#93c5fd; text-decoration:none;">linkedin.com/in/tanmayakalwadi</a></p>
+<p style="margin-top: 30px; font-size: 14px; color: #9ca3af;">&copy; 2025 Tanmay Akalwadi. All rights reserved.</p>
+</footer>
+
+<button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" title="Go to top" style="position: fixed; bottom: 30px; right: 30px; background-color: #3b82f6; color: white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 22px; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">↑</button>
