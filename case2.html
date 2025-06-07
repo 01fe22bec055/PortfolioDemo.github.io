@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Case 2 | Tanmay Akalwadi Portfolio</title>
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background-color: #0e1117;
+      font-family: 'Segoe UI', sans-serif;
+      color: #d1d5db;
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+    header {
+      background-color: #1f2937;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      margin: 0 10px;
+      padding: 8px 14px;
+      text-decoration: none;
+      color: #f3f4f6;
+      font-weight: 600;
+      background-color: #374151;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+    nav a:hover {
+      background-color: #2563eb;
+      color: #ffffff;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+    }
+    .block {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 14px;
+      margin-bottom: 30px;
+      transition: all 0.4s ease;
+    }
+    .block:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(250, 204, 21, 0.13);
+    }
+    h1, h2, h3 {
+      color: #facc15;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: 38px;
+      text-align: center;
+      margin-top: 38px;
+      margin-bottom: 22px;
+    }
+    h2 {
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+    h3 {
+      font-size: 22px;
+      margin-bottom: 6px;
+      color: #fbbf24;
+    }
+    ul, ol {
+      margin-left: 22px;
+      margin-bottom: 18px;
+    }
+    li {
+      line-height: 1.7;
+    }
+    .figure {
+      margin: 18px 0 28px 0;
+      text-align: center;
+    }
+    .figure img {
+      max-width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(250, 204, 21, 0.08);
+      margin-bottom: 7px;
+    }
+    .figure-caption {
+      color: #93c5fd;
+      font-size: 15px;
+      font-style: italic;
+    }
+    .btn-row {
+      margin: 40px 0 0 0;
+      text-align: center;
+    }
+    .btn-row a {
+      display: inline-block;
+      background-color: #22c55e;
+      color: #111827;
+      padding: 12px 32px;
+      border-radius: 7px;
+      font-weight: 600;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 17px;
+      box-shadow: 0 4px 20px rgba(34, 197, 94, 0.09);
+      transition: background 0.25s, transform 0.25s;
+    }
+    .btn-row a:hover {
+      background-color: #16a34a;
+      color: #fff;
+      transform: scale(1.06) translateY(-2px);
+    }
+    .ref-list {
+      font-size: 15px;
+      color: #a3e635;
+      margin-top: 18px;
+    }
+    .emph {
+      color: #22c55e;
+      font-weight: 600;
+    }
+    .highlight {
+      color: #facc15;
+      font-weight: 600;
+    }
+    @media (max-width: 600px) {
+      .container, .block { padding: 18px !important; }
+      h1 { font-size: 28px !important; }
+      h2 { font-size: 20px !important; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="case2.html" style="background-color:#22c55e; color:#111827;">Business Case 2</a>
+    <a href="#analysis">Analysis</a>
+    <a href="#refs">References</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h1>Business Case 2: Dynamic Difficulty Adjustment (DDA) for Personalized Gaming</h1>
+
+  <div class="block">
+    <h2>Introduction & Problem Statement</h2>
+    <p>
+      One major challenge in game design is <span class="emph">keeping players engaged</span>—too easy and it’s boring, too hard and they quit. <span class="highlight">Dynamic Difficulty Adjustment (DDA)</span> solves this by intelligently tuning the game’s challenge in real-time, based on player behavior and performance. This ensures that both beginners and pros have a personalized, satisfying experience, maintaining flow and maximizing player retention.
+    </p>
+    <ul>
+      <li><span class="highlight">Challenge:</span> How do we monitor each player’s skill, adapt gameplay on the fly, and keep things fair and fun—without breaking immersion?</li>
+      <li><span class="highlight">Goal:</span> Build a system that automatically tracks player metrics, analyzes patterns, and adjusts AI, level design, or resources in real-time.</li>
+    </ul>
+  </div>
+
+  <div class="block" id="analysis">
+    <h2>Data Structures & Algorithms Used</h2>
+    <ul>
+      <li>
+        <span class="emph">Player Profiling:</span> Player stats and behavioral data (health, score, completion time, input speed, deaths, etc.) stored in hashmaps or custom data classes.
+      </li>
+      <li>
+        <span class="emph">Sliding Window Analysis:</span> Recent player actions are tracked using a fixed-size queue (sliding window) to spot trends—improving, struggling, or coasting.
+      </li>
+      <li>
+        <span class="emph">Decision Trees/Finite State Machines:</span> Rule-based systems evaluate player data and choose difficulty actions (e.g., spawn fewer enemies, provide health packs).
+      </li>
+      <li>
+        <span class="emph">Heuristics & Utility Functions:</span> Combine metrics (accuracy, speed, resource use) into a “difficulty score” to guide changes.
+      </li>
+      <li>
+        <span class="emph">Priority Queues:</span> When multiple adjustments are possible (AI, level, loot), actions are prioritized to keep gameplay smooth.
+      </li>
+    </ul>
+    
+  </div>
+
+  <div class="block">
+    <h2>Models & Diagrams</h2>
+    <ul>
+      <li>
+        <strong>DDA Feedback Loop:</strong> <br>
+        <div class="figure">
+      <img src="https://assets.onecompiler.app/43ky9zdvg/43kya4gdc/DDA.webp" alt="Dynamic Difficulty Adjustment Flow" style="max-width: 300px; height: auto;"/>
+      <div class="figure-caption">Figure: Feedback loop—player data is collected, analyzed, and used to modify game state for optimal experience.</div>
+    </div>
+      </li>
+      <li>
+        <strong>Example Adjustment Process:</strong>
+        <ol>
+          <li>Player defeats enemies too easily; system increases AI aggressiveness.</li>
+          <li>Player struggles repeatedly; system spawns health kits and reduces enemy accuracy.</li>
+          <li>Multiple rules and adjustments are ranked and applied in real-time.</li>
+        </ol>
+      </li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h2>Efficiency Analysis</h2>
+    <ul>
+      <li>
+        <span class="emph">Time Complexity:</span> 
+        <ul>
+          <li>Player stat updates: O(1)</li>
+          <li>Sliding window/statistics: O(k), k = window size (usually small)</li>
+          <li>Decision logic: O(1)–O(n) depending on the number of rules</li>
+        </ul>
+      </li>
+      <li>
+        <span class="emph">Memory Efficiency:</span> Only short-term player data and active rulesets are stored, minimizing overhead.</li>
+      <li>
+        <span class="emph">Scalability:</span> System can adjust individually for thousands of players in multiplayer settings, each with their own stats and preferences.
+      </li>
+      <li>
+        <span class="emph">Real-World Example:</span> Games like <span class="highlight">Left 4 Dead</span>, <span class="highlight">Resident Evil 4</span>, and <span class="highlight">Mario Kart</span> use DDA to keep challenge and engagement high—modifying enemy strength, AI, or items based on real-time feedback.</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h2>Use Case Example</h2>
+    <p>
+      In <span class="highlight">Left 4 Dead</span>, the “AI Director” analyzes player health, speed, and teamwork to decide when to unleash zombie hordes or give players a breather. In <span class="highlight">Mario Kart</span>, falling behind means better power-ups and slower AI racers. DDA ensures every player stays in the sweet spot—challenged, but never overwhelmed.
+    </p>
+    <p>
+      <span class="highlight">Inference:</span> Dynamic Difficulty Adjustment is a key tool for modern game design, helping developers reach broad audiences and create highly engaging, replayable experiences that feel uniquely tailored to each player.
+    </p>
+  </div>
+
+  <div class="block" id="refs">
+    <h2>References</h2>
+    <ol class="ref-list">
+      <li>Hunicke, R. (2005). <i>The Case for Dynamic Difficulty Adjustment in Games</i>. ACM SIGCHI.</li>
+      <li>Wikipedia: <a href="https://en.wikipedia.org/wiki/Dynamic_game_difficulty_balancing" target="_blank" style="color:#3b82f6;">Dynamic game difficulty balancing</a></li>
+      <li>Valve Software: <a href="https://developer.valvesoftware.com/wiki/AI_Director" target="_blank" style="color:#3b82f6;">AI Director (Left 4 Dead)</a></li>
+      <li>“Difficulty Adjustment Systems in Games”, Gamasutra: <a href="https://www.gamedeveloper.com/design/difficulty-adjustment-systems-in-games" target="_blank" style="color:#3b82f6;">Read Article</a></li>
+    </ol>
+  </div>
+
+  <div class="btn-row">
+    <a href="index.html">← Back to Main Portfolio</a>
+    <a href="#analysis">Go to Analysis</a>
+  </div>
+</div>
+
+</body>
+</html>
