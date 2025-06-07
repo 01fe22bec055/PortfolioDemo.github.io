@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Case 1 | Tanmay Akalwadi Portfolio</title>
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background-color: #0e1117;
+      font-family: 'Segoe UI', sans-serif;
+      color: #d1d5db;
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+    header {
+      background-color: #1f2937;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      margin: 0 10px;
+      padding: 8px 14px;
+      text-decoration: none;
+      color: #f3f4f6;
+      font-weight: 600;
+      background-color: #374151;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+    nav a:hover {
+      background-color: #2563eb;
+      color: #ffffff;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+    }
+    .block {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 14px;
+      margin-bottom: 30px;
+      transition: all 0.4s ease;
+    }
+    .block:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(250, 204, 21, 0.13);
+    }
+    h1, h2, h3 {
+      color: #facc15;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: 38px;
+      text-align: center;
+      margin-top: 38px;
+      margin-bottom: 22px;
+    }
+    h2 {
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+    h3 {
+      font-size: 22px;
+      margin-bottom: 6px;
+      color: #fbbf24;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 16px 0;
+    }
+    .tags span {
+      background: #3b82f6;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-size: 15px;
+      cursor: default;
+      transition: transform 0.3s ease;
+    }
+    .tags span:hover {
+      transform: scale(1.08);
+    }
+    .emph {
+      color: #22c55e;
+      font-weight: 600;
+    }
+    .highlight {
+      color: #facc15;
+      font-weight: 600;
+    }
+    ul, ol {
+      margin-left: 22px;
+      margin-bottom: 18px;
+    }
+    li {
+      line-height: 1.7;
+    }
+    .figure {
+      margin: 18px 0 28px 0;
+      text-align: center;
+    }
+    .figure img {
+      max-width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(250, 204, 21, 0.08);
+      margin-bottom: 7px;
+    }
+    .figure-caption {
+      color: #93c5fd;
+      font-size: 15px;
+      font-style: italic;
+    }
+    .btn-row {
+      margin: 40px 0 0 0;
+      text-align: center;
+    }
+    .btn-row a {
+      display: inline-block;
+      background-color: #22c55e;
+      color: #111827;
+      padding: 12px 32px;
+      border-radius: 7px;
+      font-weight: 600;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 17px;
+      box-shadow: 0 4px 20px rgba(34, 197, 94, 0.09);
+      transition: background 0.25s, transform 0.25s;
+    }
+    .btn-row a:hover {
+      background-color: #16a34a;
+      color: #fff;
+      transform: scale(1.06) translateY(-2px);
+    }
+    .ref-list {
+      font-size: 15px;
+      color: #a3e635;
+      margin-top: 18px;
+    }
+    @media (max-width: 600px) {
+      .container, .block { padding: 18px !important; }
+      h1 { font-size: 28px !important; }
+      h2 { font-size: 20px !important; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="case1.html" style="background-color:#22c55e; color:#111827;">About idea</a>
+    <a href="#analysis">Analysis</a>
+    <a href="#refs">References</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h1>Scalable, Realistic NPC Navigation in Open-World Games</h1>
+
+  <div class="block">
+    <h2>Introduction & Problem Statement</h2>
+    <p>
+      Open-world games like <span class="highlight">Grand Theft Auto</span>, <span class="highlight">Assassin’s Creed</span>, and <span class="highlight">Red Dead Redemption</span> immerse players in vast, complex environments. To maintain believability, <span class="emph">AI-controlled NPCs</span> (non-player characters) must move naturally—navigating crowds, avoiding obstacles, and reacting to player actions. Traditional pathfinding (e.g., BFS/DFS or simple waypoint following) often results in robotic, immersion-breaking behaviors, especially as game worlds grow larger and more dynamic.
+    </p>
+    <ul>
+      <li><span class="highlight">Challenge:</span> How can we design scalable, efficient, and lifelike navigation for hundreds or thousands of NPCs in a changing world?</li>
+      <li><span class="highlight">Goal:</span> Deliver an AI pathfinding system that is robust, adaptive, and efficient—raising both gameplay quality and technical performance.</li>
+    </ul>
+  </div>
+
+  <div class="block" id="analysis">
+    <h2>Data Structures & Algorithms Used</h2>
+    <ul>
+      <li><span class="emph">Graph Representation:</span> The environment is modeled as a dynamic graph, with nodes as waypoints and edges as possible paths (streets, doors, shortcuts).</li>
+      <li><span class="emph">A* Search (Priority Queue):</span> Efficiently computes optimal paths by combining actual cost and heuristics (like Euclidean/Manhattan distance), using a priority queue for fast minimum selection.</li>
+      <li><span class="emph">Dynamic Weighted Graphs:</span> Edge weights (travel cost) are updated in real-time—e.g., if a road is blocked, a crowd forms, or the player triggers an event.</li>
+      <li><span class="emph">Spatial Partitioning:</span> <span class="highlight">Quadtrees</span> or <span class="highlight">KD-trees</span> are used for rapid nearest-neighbor lookups and collision checks in large spaces.</li>
+      <li><span class="emph">Memoization & Caching:</span> Frequently used routes are cached for NPCs to avoid redundant computation and reduce CPU load.</li>
+    </ul>
+    <div class="figure">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Graph_with_shortest_path.svg/500px-Graph_with_shortest_path.svg.png" alt="Graph-based Pathfinding Example" />
+      <div class="figure-caption">Figure: Dynamic graph representation for NPC navigation; the shortest path (A*) updates as weights change.</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Models & Diagrams</h2>
+    <ul>
+      <li>
+        <strong>Game World as a Graph:</strong> <br>
+        <img src="https://assets.onecompiler.app/43ky9zdvg/43kya4gdc/Game%20World%20as%20a%20Graph.webp" alt="Game world graph illustration" style="max-width:380px; margin:16px 0;">
+        <div class="figure-caption">Nodes = waypoints, Edges = walkable connections</div>
+      </li>
+      <li>
+        <strong>Pathfinding Process:</strong>
+        <ol>
+          <li>NPC sets a goal (e.g., walk to shop, run from police)</li>
+          <li>Graph is updated with current obstacles and weights</li>
+          <li>A* computes best route via priority queue</li>
+          <li>NPC follows path, reacting to live changes</li>
+        </ol>
+      </li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h2>Efficiency Analysis</h2>
+    <ul>
+      <li>
+        <span class="emph">Time Complexity:</span> 
+        <ul>
+          <li><b>A* Search:</b> O(E log V) with a priority queue, where E = edges and V = nodes</li>
+          <li><b>Spatial Queries:</b> O(log n) for quadtrees/KD-trees</li>
+        </ul>
+      </li>
+      <li>
+        <span class="emph">Memory Efficiency:</span> Route caching significantly reduces repeated calculations in crowded areas.</li>
+      <li>
+        <span class="emph">Scalability:</span> System supports thousands of NPCs by updating only affected regions when changes occur, not recomputing the entire map.
+      </li>
+      <li>
+        <span class="emph">Real-World Example:</span> Games like GTA V use similar systems to keep the world lively without lag, even with dynamic police chases, traffic jams, and spontaneous player chaos!
+      </li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h2>Use Case Example</h2>
+    <p>
+      Imagine you steal a car in GTA and speed through a busy intersection—pedestrians dodge, police cars reroute, and taxis choose side streets to avoid the chaos. This is made possible by smart, real-time pathfinding. By treating the world as a dynamic graph and optimizing navigation with algorithms like A*, modern open-world games achieve a level of immersion and unpredictability that truly feels alive.
+    </p>
+    <p>
+      <span class="highlight">Inference:</span> Combining dynamic graphs, efficient search, and real-time updates creates intelligent NPC behavior that is both scalable and believable. These systems are at the core of next-generation game AI.
+    </p>
+  </div>
+
+  <div class="block" id="refs">
+    <h2>References</h2>
+    <ol class="ref-list">
+      <li>Millington, I., & Funge, J. (2016). <i>Artificial Intelligence for Games</i>. CRC Press.</li>
+      <li>GDC Vault: <a href="https://www.gdcvault.com/play/1021846/Pathfinding-in-Games" target="_blank" style="color:#3b82f6;">Pathfinding in Games</a></li>
+      <li>Wikipedia: <a href="https://en.wikipedia.org/wiki/A*_search_algorithm" target="_blank" style="color:#3b82f6;">A* Search Algorithm</a></li>
+      <li>Real-Time Collision Detection, Christer Ericson, 2004</li>
+      <li>“Efficient Large-Scale Pathfinding in Open Worlds”, <a href="https://www.gamedevs.org/" target="_blank" style="color:#3b82f6;">GameDevs.org</a></li>
+    </ol>
+  </div>
+
+  <div class="btn-row">
+    <a href="index.html">← Back to Main Portfolio</a>
+    <a href="#analysis">Go to Analysis</a>
+  </div>
+</div>
+
+</body>
+</html>
